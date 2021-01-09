@@ -1,0 +1,27 @@
+1.one way binding:
+1.1.{{ }} string interpolation = [textContent]
+1.2.[] directive or property/attribute
+1.2.1.directive(*=microtemplate or structural):
+[ngClass]
+[ngStyle]
+*ngFor
+*ngIf
+[ngSwitch]
+*ngSwitchCase
+*ngSwitchDefault
+[ngTemplateOutlet]
+[ngTemplateOutletContext]
+1.2.2.property/attribute(indien niet gevonden als directive):
+[property] vb [value]
+[atrr.name] vb [attr.colspan]
+[class] vb [class]
+[class.name] vb [class.bg-info]
+[style.name] vb [style.fontSize](Javascript property) of [style.font-size] (CSS property)
+[style.name.units] vb [style.fontSize.px]
+1.3.() event
+
+2.Two way binding
+2.1.[()]
+
+3.Reference variable
+# vb #titleTemplate

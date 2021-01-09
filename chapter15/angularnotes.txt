@@ -1,0 +1,58 @@
+0.Decorators
+@NgModule
+@Component
+@Directive
+@Attribute
+@Input
+
+1.one way binding:
+1.1.{{ }} string interpolation = [textContent]
+1.2.[] directive or property/attribute
+1.2.1.directive(*=microtemplate or structural):
+[ngClass]
+[ngStyle]
+*ngFor (index/odd/even/first/last)
+*ngIf
+[ngSwitch]
+*ngSwitchCase
+*ngSwitchDefault
+[ngTemplateOutlet]
+[ngTemplateOutletContext]
+1.2.2.property/attribute(indien niet gevonden als directive):
+[property] vb [value], [disabled]
+[atrr.name] vb [attr.colspan]
+[class] vb [class]
+[class.name] vb [class.bg-info]
+[style.name] vb [style.fontSize](Javascript property) of [style.font-size] (CSS property)
+[style.name.units] vb [style.fontSize.px]
+
+2.event binding
+2.1.() vb (mouseover), (input) $event.target.value, (keyup), (keyup.enter), (ngSubmit)
+
+3.two way binding
+3.1.[(ngModel)] is een event binding + een property binding vb [(ngModel)]="selectedProduct" event = input, property = value, (input)="selectedProduct=$event.target.value" [value]="selectedProduct || ''"
+
+4.Reference variable
+# vb #titleTemplate, #product, #name, #form
+
+5.Validation
+5.1.name is verplicht vb name="name", name="price"
+5.2.#reference_variable="ngModel" vb #name="ngModel" 
+(path/valid/invalid/pristine/dirty/touched/untouched/errors/errors.required/errors.minlength.requiredLength/errors.minlength.actualLength/erros.pattern.requiredPattern/errors.pattern.actualValue)
+
+6.Forms
+6.1.Directive
+[formGroup] vb [formGroup]="form"
+6.2.attribute
+formControlName vb formControlName="name"
+
+7.Custom directive
+7.1.Custom attribute directive
+attribute-directive attribute-directive-class=static-value vb pa-attr pa-attr-class="bg-warning" of kort pa-attr="bg-warning"
+[attribute-directive]=expression vb [pa-attr]="item.category == 'Soccer' ? 'bg-info' : null"
+@Input("attribute-directive") vb @Input("pa-attr")
+
+8.Custom event
+8.1.@Output("attribute-directive") vb @Output("pa-category")
+8.2.@HostBinding("property") = property binding vb @HostBinding("class")
+@HostListener("event") = event binding vb @HostListener("click")
